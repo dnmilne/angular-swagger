@@ -29,7 +29,7 @@ This requires [AngularJS](https://angularjs.org/). In addition, you will need:
 
 Simply create the following element
 
-<swagger-apis url='path/to/swagger' />
+    <swagger-apis url='path/to/swagger' />
 
 where `path/to/swagger` is the location of your swagger documentation (usually `/api-docs/`)
 
