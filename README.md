@@ -1,8 +1,9 @@
 ##angular-swagger
 
-This module provides tools a simple, minimal interface for reading [Swagger](https://helloreverb.com/developers/swagger) documentation. 
+This module provides a simple, minimal interface for reading [Swagger](https://helloreverb.com/developers/swagger) documentation. 
 
 The interface is built using ordinary [Bootstrap](http://getbootstrap.com) components, so you should find it very easy to theme and style.
+
 
 ## Dependencies
 
@@ -10,6 +11,7 @@ This requires [AngularJS](https://angularjs.org/). In addition, you will need:
 
  * [Bootstrap](http://getbootstrap.com)
  * [Angular UI Bootstrap](http://angular-ui.github.io/bootstrap/)
+ * [Showdown](https://github.com/showdownjs/showdown)
 
 
 ## Installation
@@ -22,7 +24,9 @@ This requires [AngularJS](https://angularjs.org/). In addition, you will need:
 
 4. Include `ui-bootstrap-tpls.min.js` (in `bower_components/angular-bootstrap`)
 
-5. Add `angular-swagger` as a module dependency to your app.
+5. Include `showdown.js` (in `bower_components/showdown/compressed`)
+
+6. Add `angular-swagger` as a module dependency to your app.
 
 
 ## Usage
