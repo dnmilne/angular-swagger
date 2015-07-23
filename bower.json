@@ -1,10 +1,11 @@
 {
     "name": "angular-swagger",
     "main": ["dist/angular-swagger.js", "dist/angular-swagger.css"],
-    "version": "0.0.4",
+    "version": "0.0.5",
     "dependencies": {
         "angular": "latest",
         "angular-sanitize": "latest",
+        "angular-bootstrap": "latest",
         "bootstrap": "latest",
         "markdown-it": "latest",
         "font-awesome": "latest",
