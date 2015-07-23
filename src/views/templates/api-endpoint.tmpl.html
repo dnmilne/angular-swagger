@@ -1,0 +1,86 @@
+<div>
+
+    <h4 ng-click='state.expanded = !state.expanded' style='cursor:pointer'>
+        <span ng-hide='state.expanded'><i class='fa fa-plus-square'></i>&nbsp;</span>
+        <span ng-show='state.expanded'><i class='fa fa-minus-square'></i>&nbsp;</span>
+
+        <span class='label {{methodClass}}'>{{endpoint.method | uppercase}}</span>
+        <span ng-bind-html='formatPath(endpoint.path) | unsafe'></span>
+    </h4>
+
+    <p ng-show='endpoint.summary' style='padding-left: 30px' ng-bind-html="endpoint.summary | markdown | unsafe">
+    </p>
+
+    <p ng-hide="endpoint.summary">
+        no description
+    </p>
+
+    <div ng-show='state.expanded' style='padding-left: 30px'>
+
+        <p style="padding-top:10px ; padding-left: 5px">
+
+            <span ng-if="endpoint.consumes.length">
+                <span class="text-muted small">consumes: </span>
+                <span ng-repeat="c in endpoint.consumes">
+                    <span ng-if="!$first">&nbsp;</span>
+                    <code>{{c}}</code>
+                </span>
+
+                &nbsp;&nbsp;
+            </span>
+
+            <span ng-if="endpoint.produces.length">
+                <span class="text-muted small">produces: </span>
+                <span ng-repeat="p in endpoint.produces">
+                    <span ng-if="!$first">&nbsp;</span>
+                    <code>{{p}}</code>
+                </span>
+            </span>
+
+        </p>
+
+        <table class="property-table">
+
+            <tr ng-if='parametersByType["path"].length'>
+                <td colspan="3" class="text-muted small text-left" style="padding-top: 10px">
+                    path parameters:
+                </td>
+            </tr>
+
+            <tr ng-repeat='param in parametersByType["path"]' api-parameter param='param' api='api'>
+            </tr>
+
+            <tr ng-if='parametersByType["body"].length'>
+                <td colspan="3" class="text-muted small text-left" style="padding-top: 10px">
+                    body parameters:
+                </td>
+            </tr>
+
+            <tr ng-repeat='param in parametersByType["body"]' api-parameter param='param' api='api'>
+            </tr>
+
+            <tr ng-if='parametersByType["query"].length'>
+                <td colspan="3" class="text-muted small text-left" style="padding-top: 10px">
+                    query parameters:
+                </td>
+            </tr>
+
+            <tr ng-repeat='param in parametersByType["query"]' api-parameter param='param' api='api'>
+            </tr>
+
+            <tr>
+                <td colspan="3" class="text-muted small text-left" style="padding-top: 10px">
+                    responses:
+                </td>
+            </tr>
+
+            <tr ng-repeat='(code,response) in endpoint.responses' api-response code='code' response="response" api='api'>
+            </tr>
+
+
+        </table>
+
+    </div>
+
+    <br/>
+</div>

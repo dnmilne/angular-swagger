@@ -1,0 +1,43 @@
+
+    <td class="text-right" style="padding-left: 20px">
+        <!--
+    <span ng-show='{{param.required}}' tooltip='mandatory' tooltip-placement='left'><i class='fa fa-circle'></i></span>
+    <span ng-hide='{{param.required}}' tooltip='optional' tooltip-placement='left'><i class='fa fa-circle-o'></i></span>
+        -->
+        <strong>{{param.name}}</strong>
+    </td>
+
+    <td class="text-center">
+        <api-type-badge details="param" api="api"/>
+    </td>
+
+    <td>
+        <p>
+            <span ng-if="!param.required && param.in=='query'" class="text-muted">optional - </span>
+            <span ng-show="param.description" ng-bind-html="param.description | markdown | unsafe"></span>
+
+            <span ng-hide="param.description">no description</span>
+        </p>
+
+        <p ng-if="param.enum">
+            One of
+            <span ng-repeat="e in param.enum">
+                <span ng-if="!$first && !$last">, </span>
+                <span ng-if="$last"> or </span>
+                <code>{{e}}</code>
+            </span>
+        </p>
+
+        <p ng-if="param.items.enum">
+            One or more of
+            <span ng-repeat="e in param.items.enum">
+                <span ng-if="!$first && !$last">, </span>
+                <span ng-if="$last"> or </span>
+                <code>{{e}}</code>
+            </span>
+        </p>
+
+        <p ng-if="param.default">Defaults to <code>{{param.default}}</code></p>
+
+        <p ng-if="param.items.default">Defaults to <code>{{param.items.default}}</code></p>
+    </td>

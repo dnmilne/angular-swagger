@@ -1,0 +1,17 @@
+
+<td class="text-right" style="padding-left: 20px">
+    <p >
+        <span class='label {{getResponseCodeClass(code)}}' style="padding: 3px 7px ; line-height: 1; vertical-align: middle ; display: inline-block ; font-size:12px ; margin-bottom: 3px" >{{code}}</span> &nbsp;
+    </p>
+</td>
+
+<td class="text-center">
+    <p>
+        <api-type-badge details="response" api="api"/>
+    </p>
+</td>
+
+<td>
+    <p ng-show="response.description">{{response.description}}</p>
+    <p ng-hide="response.description">no description</p>
+</td>

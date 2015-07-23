@@ -1,0 +1,25 @@
+<div class='modal-header'>
+    <button type='button' class='close' ng-click='$dismiss()'>
+        <span aria-hidden='true'>&times;</span>
+    </button>
+    <strong>{{name}}</strong>
+</div>
+
+<div class='modal-body'>
+    <p ng-bind-html="definition.description | markdown | unsafe">
+    </p>
+
+    <p ng-hide="definition.description">
+        no description
+    </p>
+
+    <br/>
+
+    <table class="property-table">
+
+        <tr ng-repeat='(propertyName,property) in definition.properties' api-schema-property property-name='propertyName' property="property" api='api'>
+        </tr>
+
+    </table>
+
+</div>

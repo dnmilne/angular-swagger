@@ -1,13 +1,14 @@
 {
     "name": "angular-swagger",
-    "main": "angular-swagger.js",
-    "version": "0.0.3",
+    "main": ["dist/angular-swagger.js", "dist/angular-swagger.css"],
+    "version": "0.0.4",
     "dependencies": {
         "angular": "latest",
         "angular-sanitize": "latest",
         "bootstrap": "latest",
-        "angular-bootstrap": "latest",
-        "showdown": "latest"
+        "markdown-it": "latest",
+        "font-awesome": "latest",
+        "lodash": "latest"
     },
     "authors": [
         "David Milne <david.milne@sydney.edu.au>"

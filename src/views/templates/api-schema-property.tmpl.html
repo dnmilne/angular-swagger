@@ -1,0 +1,25 @@
+
+<td class="text-right" style="padding-left: 20px">
+    <strong>{{propertyName}}</strong>
+</td>
+
+<td class="text-center">
+    <api-type-badge details="property" api="api"/>
+</td>
+
+<td>
+    <p ng-show="property.description" ng-bind-html="property.description | markdown | unsafe"></p>
+
+    <p ng-hide="property.description">no description</p>
+
+    <p ng-if="property.enum">
+        One of
+        <span ng-repeat="e in property.enum">
+            <span ng-if="!$first && !$last">, </span>
+            <span ng-if="$last"> or </span>
+            <code>{{e}}</code>
+        </span>
+    </p>
+
+    <p ng-if="property.default">Defaults to <code>{{param.default}}</code></p>
+</td>
