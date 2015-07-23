@@ -1,0 +1,19 @@
+<div>
+
+    <h3 ng-click='state.expanded = !state.expanded' style='cursor:pointer'>
+        <span ng-hide='state.expanded'><i class='fa fa-plus-square'></i>&nbsp;</span>
+        <span ng-show='state.expanded'><i class='fa fa-minus-square'></i>&nbsp;</span>
+
+        <span>{{tag.name}}</span>
+    </h3>
+
+    <p ng-show="tag.description" style='padding-left: 30px' ng-bind-html="tag.description | markdown | unsafe">
+    </p>
+
+    <br/>
+
+    <div ng-show='state.expanded' style='padding-left: 30px'>
+        <api-endpoint ng-repeat="endpoint in tag.endpoints" endpoint="endpoint" api="api" />
+    </div>
+
+</div>

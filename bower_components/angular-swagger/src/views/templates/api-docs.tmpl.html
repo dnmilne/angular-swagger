@@ -1,0 +1,45 @@
+<p>
+    <h1>
+        {{api.info.title}} <small>{{api.info.version}}</small>
+    </h1>
+
+    <p ng-bind-html="api.info.description | markdown | unsafe">
+    </p>
+
+    <p ng-show="api.info.license.name || api.info.termsOfService">
+        <span ng-show="api.info.license.name">
+            Shared under the <a ng-href="{{api.info.license.url}}">{{api.info.license.name}}</a> licence.
+        </span>
+        <span ng-show="api.info.termsOfService">
+            Check <a ng-href="{{api.info.termsOfService}}">here</a> for terms of service.
+        </span>
+    </p>
+
+    <p ng-show="api.info.contact">
+        If you need help, contact
+
+        <a ng-show="api.info.contact.email" ng-href="mailto:{{api.info.contact.email}}">
+            <span ng-show="api.info.contact.name">
+                {{api.info.contact.name}}
+            </span>
+            <span ng-show="!api.info.contact.name ">
+                {{api.info.contact.email}}
+            </span>
+        </a>
+
+        <strong ng-show="!api.info.contact.email">
+            {{api.info.contact.name}}
+        </strong>
+    </p>
+
+
+
+    <br/>
+
+
+
+
+    <api-tag ng-repeat="tag in api.tags" tag="tag" api="api"/>
+
+
+</div>
