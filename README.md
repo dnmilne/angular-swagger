@@ -15,7 +15,7 @@ This requires [AngularJS](https://angularjs.org/). In addition, you will need:
  * [Lodash](https://lodash.com/)
  * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
- But all of that is handled automatically if you install via [bower](http://bower.io/).
+But all of that is handled automatically if you install via [bower](http://bower.io/).
 
 ## Installation
 
